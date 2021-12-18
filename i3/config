@@ -64,7 +64,7 @@ bindsym $mod+q kill
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # krunner
-bindsym $mod+d exec --no-startup-id krunner
+bindsym $mod+s exec --no-startup-id krunner
 
 # deepin-screenshot
 bindsym $mod+z exec --no-startup-id deepin-screenshot
@@ -124,9 +124,9 @@ bindsym $mod+a focus parent
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 ""
 set $ws2 ""
-set $ws3 ""
-set $ws4 ""
-set $ws5 "5"
+set $ws3 ""
+set $ws4 ""
+set $ws5 ""
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
@@ -146,13 +146,18 @@ bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
 # go to workspace $ws2 and then exec chromium
-bindsym $mod+c workspace $ws2, exec chromium, focus
-# go to workspace $ws4 and then exec music
-bindsym $mod+m workspace $ws4, focus, exec netease-cloud-music --force-device-scale-factor=1.25 %U
+bindsym $mod+c workspace $ws2, exec chromium --no-startup-id, focus
+# go to workspace $ws3 and then exec dbeaver
+bindsym $mod+d workspace $ws3, exec /opt/dbeaver/dbeaver --no-startup-id, focus
+# go to workspace $ws4 and then exec dbeaver
+bindsym $mod+p workspace $ws4, exec /opt/PostmanCanary/app/PostmanCanary --no-startup-id, focus
+# go to workspace $ws5 and then exec music
+bindsym $mod+m workspace $ws5, exec netease-cloud-music  --no-startup-id --force-device-scale-factor=1.25 %U, focus
+
 # go to prev workspace
-bindsym $mod+p workspace prev
+bindsym $mod+Shift+p workspace prev
 # go to next workspace
-bindsym $mod+n workspace next
+bindsym $mod+Shift+n workspace next
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
