@@ -135,7 +135,8 @@ let g:coc_global_extensions = [
     \ 'coc-css',
     \ 'coc-tsserver',
     \ 'coc-json',
-    \ 'coc-vetur',
+    "\ 'coc-vetur', replaced by coc-volar for better support of vue3, notice: coc-volar may need node > 15
+    \ '@yaegassy/coc-volar',
     \ 'coc-phpls']
 
 let g:coc_snippet_next = '<tab>'
@@ -154,7 +155,8 @@ nnoremap <silent> <C-b> :CocCommand explorer --sources=buffer-,file+ <CR>
 "nnoremap  <silent> <C-g> :FloatermNew lazygit<CR>
 nnoremap <silent> <C-g> :call LazygitWinOpen()<CR>
 "coc-translator
-nnoremap <silent> <C-y> :CocCommand translator.popup<CR>
+"nnoremap <silent> <C-y> :CocCommand translator.popup<CR>
+
 "markdown-preview
 nnoremap <silent> <C-m> :MarkdownPreviewToggle<CR>
 "FZF
