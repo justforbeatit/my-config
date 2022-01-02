@@ -172,6 +172,9 @@ let bufferline = get(g:, 'bufferline', {})
 "let bufferline._hide = v:true
 let bufferline.icons = 'both'
 let bufferline.insert_at_start = v:true
+let bufferline.closeable = v:false
+let bufferline.icon_separator_active = '|'
+let bufferline.icon_separator_inactive = '|'
 
 "tagbar -- install ctags first
 nmap b :TagbarToggle<CR>
