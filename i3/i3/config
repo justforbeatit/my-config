@@ -56,6 +56,7 @@ bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
+bindsym $mod+x exec killall electron
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id dmenu_run
@@ -126,10 +127,10 @@ bindsym $mod+a focus parent
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 ""
 set $ws2 ""
-set $ws3 ""
-set $ws4 ""
-set $ws5 ""
-set $ws6 ""
+set $ws3 ""
+set $ws4 ""
+set $ws5 ""
+set $ws6 ""
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
@@ -149,15 +150,17 @@ bindsym $mod+0 workspace number $ws10
 
 # go to workspace $ws2 and then exec chromium
 bindsym $mod+c workspace $ws2, exec chromium --no-startup-id, focus
-# go to workspace $ws3 and then exec dbeaver
-#bindsym $mod+d workspace $ws3, exec /opt/dbeaver/dbeaver --no-startup-id, focus
-bindsym $mod+d workspace $ws3, exec lua ~/.config/i3/scripts/dbeaver.lua --no-startup-id, focus
-# go to workspace $ws4 and then exec dbeaver
-bindsym $mod+p workspace $ws4, exec /opt/PostmanCanary/app/PostmanCanary --no-startup-id, focus
-# go to workspace $ws5 and then exec music
-bindsym $mod+m workspace $ws5, exec netease-cloud-music  --no-startup-id --force-device-scale-factor=1.25 %U, focus
+
 # go to workspace $ws6 and then wechat
-bindsym $mod+w workspace $ws6, exec wechat-uos --no-startup-id, focus
+bindsym $mod+w workspace $ws3, exec wechat-uos --no-startup-id, focus
+
+#go to workspace $ws3 and then exec dbeaver
+#bindsym $mod+d workspace $ws3, exec /opt/dbeaver/dbeaver --no-startup-id, focus
+bindsym $mod+d workspace $ws4, exec lua ~/.config/i3/scripts/dbeaver.lua --no-startup-id, focus
+# go to workspace $ws4 and then exec dbeaver
+bindsym $mod+p workspace $ws5, exec /opt/PostmanCanary/app/PostmanCanary --no-startup-id, focus
+# go to workspace $ws5 and then exec music
+bindsym $mod+m workspace $ws6, exec netease-cloud-music  --no-startup-id --force-device-scale-factor=1.25 %U, focus
 
 # go to prev workspace
 bindsym $mod+Shift+p workspace prev
@@ -170,7 +173,7 @@ bindsym $mod+Shift+2 move container to workspace  $ws2
 bindsym $mod+Shift+3 move container to workspace  $ws3
 bindsym $mod+Shift+4 move container to workspace  $ws4
 bindsym $mod+Shift+5 move container to workspace  $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+6 move container to workspace  $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
@@ -240,7 +243,6 @@ for_window [class="Klipper"] floating enable; border none
 for_window [class="Plasmoidviewer"] floating enable; border none
 for_window [class="(?i)*nextcloud*"] floating disable
 for_window [class="plasmashell" window_type="notification"] floating enable, border none, move right 700px, move down 450px
-no_focus [class="plasmashell" window_type="notification"]
 
 #new_window 1pixel
 new_window none
