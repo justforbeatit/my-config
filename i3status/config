@@ -21,6 +21,9 @@ order += "memory"
 order += "volume master"
 order += "tztime local"
 
+
+#for emoji support see: https://www.unicode.org/emoji/charts/full-emoji-list.html
+
 wireless _first_ {
         #format_up = "📶%essid %ip"
         format_up = "📶%essid"
