@@ -108,7 +108,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 #bindsym $mod+s layout stacking
-bindsym $mod+t layout tabbed
+bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -127,10 +127,10 @@ bindsym $mod+a focus parent
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 ""
 set $ws2 ""
-set $ws3 ""
+set $ws3 ""
 set $ws4 ""
-set $ws5 ""
-set $ws6 ""
+set $ws5 ""
+set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
@@ -151,21 +151,19 @@ bindsym $mod+0 workspace number $ws10
 # go to workspace $ws2 and then exec chromium
 bindsym $mod+c workspace $ws2, exec chromium --no-startup-id, focus
 
-# go to workspace $ws6 and then wechat
-bindsym $mod+w workspace $ws3, exec wechat-uos --no-startup-id, focus
+# go to workspace $ws3 and then exec postman
+bindsym $mod+p workspace $ws3, exec /opt/PostmanCanary/app/PostmanCanary --no-startup-id, focus
 
 #go to workspace $ws3 and then exec dbeaver
-#bindsym $mod+d workspace $ws3, exec /opt/dbeaver/dbeaver --no-startup-id, focus
 bindsym $mod+d workspace $ws4, exec lua ~/.config/i3/scripts/dbeaver.lua --no-startup-id, focus
-# go to workspace $ws4 and then exec dbeaver
-bindsym $mod+p workspace $ws5, exec /opt/PostmanCanary/app/PostmanCanary --no-startup-id, focus
+
 # go to workspace $ws5 and then exec music
-bindsym $mod+m workspace $ws6, exec netease-cloud-music  --no-startup-id --force-device-scale-factor=1.25 %U, focus
+bindsym $mod+m workspace $ws5, exec netease-cloud-music  --no-startup-id --force-device-scale-factor=1.25 %U, focus
 
 # go to prev workspace
 bindsym $mod+Shift+p workspace prev
 # go to next workspace
-bindsym $mod+Shift+n workspace next
+bindsym $mod+n workspace next
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace  $ws1
